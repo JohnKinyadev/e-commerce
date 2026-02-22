@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ElectroNow — Product Showcase</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Electronics product showcase with responsive CSS Grid, product modal, and cart sidebar.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">ElectroNow</h1>
+      <div class="controls">
+        <div class="filter-ui">
+          <label for="category">Category</label>
+          <select id="category" aria-label="Filter by category">
+            <option>All</option>
+            <option>Phones</option>
+            <option>Laptops</option>
+            <option>Audio</option>
+          </select>
+          <label for="sort">Sort</label>
+          <select id="sort" aria-label="Sort products">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+        <div class="action-buttons">
+          <button id="themeToggle" aria-pressed="false" title="Toggle dark mode">Dark</button>
+          <button id="cartToggle" aria-controls="cart" aria-expanded="false">Cart (0)</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Latest electronics, curated for you</h2>
+      <p class="lead">Fast, reliable, and designed to convert visitors into customers.</p>
+    </section>
+
+    <section class="products-section">
+      <div class="products-header">
+        <h3>Products</h3>
+        <div class="grid-actions">
+          <button class="grid-toggle" aria-pressed="true">Grid</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- 6+ product cards -->
+        <article class="product-card" data-id="1" data-title="Aurora Phone X" data-price="799" data-image="https://via.placeholder.com/400x300?text=Aurora+Phone+X" data-rating="4.5">
+          <figure class="product-media">
+            <img src="images\phone.jpg" alt="Aurora Phone X" loading="lazy">
+            <figcaption class="badge">New</figcaption>
+          </figure>
+          <div class="product-body">
+            <h4 class="product-title">Aurora Phone X</h4>
+            <div class="meta">
+              <div class="price">$799</div>
+              <div class="rating" aria-hidden="true" data-rating="4.5"></div>
+            </div>
+            <div class="card-actions">
+              <button class="btn btn-primary add-cart">Add to cart</button>
+              <button class="btn btn-ghost view-details">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="2" data-title="Nimbus Laptop 14" data-price="1199" data-image="https://via.placeholder.com/400x300?text=Nimbus+Laptop" data-rating="4.7">
+          <figure class="product-media">
+            <img src="images\laptop.jpg" alt="Nimbus Laptop 14" loading="lazy">
+          </figure>
+          <div class="product-body">
+            <h4 class="product-title">Nimbus Laptop 14</h4>
+            <div class="meta"><div class="price">$1,199</div><div class="rating" data-rating="4.7"></div></div>
+            <div class="card-actions"><button class="btn btn-primary add-cart">Add to cart</button><button class="btn btn-ghost view-details">Details</button></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="3" data-title="Pulse Buds Pro" data-price="199" data-image="https://via.placeholder.com/400x300?text=Pulse+Buds" data-rating="4.2">
+          <figure class="product-media">
+            <img src="images\buds_pro.jpg" alt="Pulse Buds Pro" loading="lazy">
+            <figcaption class="badge sale">20% off</figcaption>
+          </figure>
+          <div class="product-body">
+            <h4 class="product-title">Pulse Buds Pro</h4>
+            <div class="meta"><div class="price">$199</div><div class="rating" data-rating="4.2"></div></div>
+            <div class="card-actions"><button class="btn btn-primary add-cart">Add to cart</button><button class="btn btn-ghost view-details">Details</button></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="4" data-title="Atlas Smartwatch" data-price="249" data-image="https://via.placeholder.com/400x300?text=Watch" data-rating="4.0">
+          <figure class="product-media">
+            <img src="images\smartwatch.jpg" alt="Atlas Smartwatch" loading="lazy">
+          </figure>
+          <div class="product-body">
+            <h4 class="product-title">Atlas Smartwatch</h4>
+            <div class="meta"><div class="price">$249</div><div class="rating" data-rating="4.0"></div></div>
+            <div class="card-actions"><button class="btn btn-primary add-cart">Add to cart</button><button class="btn btn-ghost view-details">Details</button></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="5" data-title="Volt Powerbank 20k" data-price="59" data-image="https://via.placeholder.com/400x300?text=Powerbank" data-rating="4.3">
+          <figure class="product-media">
+            <img src="images\powerbank.jpg" alt="Volt Powerbank 20k" loading="lazy">
+          </figure>
+          <div class="product-body">
+            <h4 class="product-title">Volt Powerbank 20k</h4>
+            <div class="meta"><div class="price">$59</div><div class="rating" data-rating="4.3"></div></div>
+            <div class="card-actions"><button class="btn btn-primary add-cart">Add to cart</button><button class="btn btn-ghost view-details">Details</button></div>
+          </div>
+        </article>
+
+        <article class="product-card" data-id="6" data-title="Luma 4K Monitor" data-price="349" data-image="https://via.placeholder.com/400x300?text=Monitor" data-rating="4.6">
+          <figure class="product-media">
+            <img src="images\monitor.jpg" alt="Luma 4K Monitor" loading="lazy">
+          </figure>
+          <div class="product-body">
+            <h4 class="product-title">Luma 4K Monitor</h4>
+            <div class="meta"><div class="price">$349</div><div class="rating" data-rating="4.6"></div></div>
+            <div class="card-actions"><button class="btn btn-primary add-cart">Add to cart</button><button class="btn btn-ghost view-details">Details</button></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="" loading="lazy">
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <div id="modalPrice" class="price"></div>
+          <div id="modalRating" class="rating"></div>
+          <p id="modalDesc">High-level product description goes here. Highlight features that help conversion.</p>
+          <div class="modal-actions"><button class="btn btn-primary add-cart">Add to cart</button><button class="btn btn-ghost modal-close">Close</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <aside id="cart" class="cart" aria-hidden="true">
+    <div class="cart-header"><h4>Your Cart</h4><button id="closeCart" aria-label="Close cart">×</button></div>
+    <div class="cart-body">
+      <ul id="cartList">
+        <li class="cart-item">(Empty) — add items to see them here.</li>
+      </ul>
+    </div>
+    <div class="cart-footer"><div class="cart-total">Total: $0</div><button class="btn btn-primary">Checkout</button></div>
+  </aside>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
