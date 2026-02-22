@@ -12,7 +12,6 @@ npx http-server .
 What’s included
 - `index.html` — product grid, modal, cart sidebar
 - `css/styles.css` — design tokens, layout, dark mode, print
-- `js/script.js` — modal, cart UI, theme toggle
 - Documentation files: CSS architecture, design system, compatibility, performance guidance
 
 Notes & next steps
